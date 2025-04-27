@@ -1,0 +1,28 @@
+name: 開発タスク登録
+description: 開発作業単位でタスクを登録するためのテンプレート
+title: "[Task] "
+labels: ["task"]
+body:
+  - type: input
+    attributes:
+      label: タスク概要
+      description: 簡単なタイトルを記載してください。
+      placeholder: 例）世界地図コンポーネントの作成
+  - type: textarea
+    attributes:
+      label: 詳細説明
+      description: このタスクでやるべき内容を詳しく記載してください。
+      placeholder: 例）react-leafletを使って世界地図を表示できるようにする
+  - type: textarea
+    attributes:
+      label: 作業内容
+      description: 必要な具体的作業を箇条書きで記載してください。
+      placeholder: |
+        - react-leafletインストール
+        - 世界地図を表示するMapContainerコンポーネントを作成
+        - クリックイベントで緯度・経度を取得できるようにする
+  - type: textarea
+    attributes:
+      label: 備考・注意点
+      description: 特記事項があれば記載してください（なければ空欄でOK）
+      placeholder: 例）特になし
