@@ -23,4 +23,7 @@ dist-ssr
 *.sln
 *.sw?
 
+# Yarn specific files
+.yarn/*
+
 *storybook.log
