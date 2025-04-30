@@ -1,54 +1,33 @@
-# React + TypeScript + Vite
+# Geo Narrator
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Geo Narrator は、緯度・経度を起点にその土地の基本情報と観光地情報を取得し、  
+音声生成ツールに投入できる紹介文（テキスト）を生成する Web アプリです。
 
-Currently, two official plugins are available:
+## 技術スタック
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- TypeScript
+- React
+- Vite
+- ESLint
+- Prettier
+- Husky
+- Storybook
 
-## Expanding the ESLint configuration
+## 機能概要
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+- 都市名から緯度・経度を検索
+- 世界地図をクリックして緯度・経度を取得
+- 指定した緯度・経度から周辺の観光地リストを取得
+- 選択した観光地の詳細情報（説明文、画像）を取得
+- 取得した情報を元に、音声用テキストを生成
 
-```js
-export default tseslint.config({
-  extends: [
-    // Remove ...tseslint.configs.recommended and replace with this
-    ...tseslint.configs.recommendedTypeChecked,
-    // Alternatively, use this for stricter rules
-    ...tseslint.configs.strictTypeChecked,
-    // Optionally, add this for stylistic rules
-    ...tseslint.configs.stylisticTypeChecked,
-  ],
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
-```
+## 使用する API
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+- [REST Countries API](https://restcountries.com/)  
+  → 国の基本情報（国旗・人口・通貨など）を取得
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+- [OpenTripMap API](https://opentripmap.io/)  
+  → 観光地リストと各観光地の詳細情報を取得
 
-export default tseslint.config({
-  plugins: {
-    // Add the react-x and react-dom plugins
-    'react-x': reactX,
-    'react-dom': reactDom,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended typescript rules
-    ...reactX.configs['recommended-typescript'].rules,
-    ...reactDom.configs.recommended.rules,
-  },
-})
-```
+- [Nominatim API (OpenStreetMap)](https://nominatim.org/)  
+  → 都市名から緯度・経度を取得
