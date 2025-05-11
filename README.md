@@ -21,6 +21,10 @@ Geo Narrator は、緯度・経度を起点にその土地の基本情報と観�
 - 選択した観光地の詳細情報（説明文、画像）を取得
 - 取得した情報を元に、音声用テキストを生成
 
+## 画面
+- 観光地探索画面
+- 編集画面
+
 ## 使用する API
 
 - [REST Countries API](https://restcountries.com/)  
@@ -31,3 +35,6 @@ Geo Narrator は、緯度・経度を起点にその土地の基本情報と観�
 
 - [Nominatim API (OpenStreetMap)](https://nominatim.org/)  
   → 都市名から緯度・経度を取得
+
+## アプリデザイン
+https://www.figma.com/design/bWdstosdzL6UfuvgPOZtKO/GeoNarrator?node-id=0-1&t=Xy42lFOiAHVK18tS-1
